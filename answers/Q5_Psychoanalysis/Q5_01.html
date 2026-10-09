@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Psychoanalysis</title>
+</head>
+<body>
+    <h1>Simple Psychoanalysis</h1>
+    <p id="response"></p>
+    <script>
+        var answer = prompt("How are you feeling?");
+        var message;
+
+        if (answer == null) {
+            answer = "";
+        }
+
+        answer = answer.toLowerCase();
+
+        if (answer == "i'm feeling down" || answer == "im feeling down" || answer == "feeling down" || answer == "down") {
+            var ans2 = prompt("Are you feeling down because of your job?");
+
+            if (ans2 == null) {
+                ans2 = "";
+            }
+
+            ans2 = ans2.toLowerCase();
+
+            if (ans2 == "yes") {
+                var ans3 = prompt("Would a short break from work help?");
+
+                if (ans3 != null && ans3.toLowerCase() == "yes") {
+                    message = "Then take that break if you can. Stepping away for a few minutes can make the job feel more manageable.";
+                } else {
+                    message = "Work stress is real. If a break is not possible, pick one small task and finish just that.";
+                }
+            } else {
+                message = "I am sorry you are feeling down. You do not have to face it alone.";
+            }
+        } else if (answer == "happy" || answer == "i'm feeling happy" || answer == "im feeling happy") {
+            message = "I am glad you are feeling happy. Enjoy that feeling.";
+        } else if (answer == "sad" || answer == "i'm feeling sad" || answer == "im feeling sad") {
+            message = "I am sorry you are feeling sad. It is okay to take things slowly today.";
+        } else if (answer == "stressed" || answer == "i'm feeling stressed" || answer == "im feeling stressed") {
+            message = "That sounds stressful. A short pause and a deep breath can help.";
+        } else if (answer == "tired" || answer == "i'm feeling tired" || answer == "im feeling tired") {
+            message = "You sound tired. Rest if you can.";
+        } else if (answer == "okay" || answer == "ok" || answer == "i'm feeling okay" || answer == "fine") {
+            message = "Okay is a perfectly fine place to be. I hope your day stays steady.";
+        } else {
+            message = "Thank you for sharing. I hope you feel a little better as the day goes on.";
+        }
+
+        document.getElementById("response").textContent = message;
+    </script>
+</body>
+</html>

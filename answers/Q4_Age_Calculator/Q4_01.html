@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    <p id="result"></p>
+    <script>
+        var firstName = prompt("Enter your first name");
+        var yearOfBirth = Number(prompt("Enter your year of birth"));
+        var currentYear = new Date().getFullYear();
+        var age = currentYear - yearOfBirth;
+
+        document.getElementById("result").textContent = firstName + " is " + age + " years old.";
+    </script>
+</body>
+</html>
